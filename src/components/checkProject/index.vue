@@ -41,7 +41,9 @@
     </div>
     <!-- Vue3插槽 -->
     <template #footer>
-      <el-button type="primary" @click="handleClose">关 闭</el-button>
+      <div class="experience_buttom">
+        <div class="buttomDiv buttonFlex hvr-back-pulse" @click="handleClose">我看完啦</div>
+      </div>
     </template>
 
   </el-dialog>
@@ -92,6 +94,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '~@/styles/minxi';
+@include buttomHover;
+.buttonFlex {
+  margin: 0 auto;
+}
 .dialog__title {
   box-sizing: border-box;
   font-size: $titleMedium;

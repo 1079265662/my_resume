@@ -304,6 +304,12 @@ export default {
 :deep(.el-dialog) {
   width: 80%;
 }
+.overall-header,
+.introduction,
+.experience,
+.my_project {
+  transition: $transition;
+}
 .upKey {
   height: 100%;
   width: 100%;
@@ -327,7 +333,6 @@ export default {
   grid-template-areas: 'a b' 'c c';
   height: auto;
   min-height: $minHeight;
-  transition: all 0.25s ease-in-out 0.16s;
   .overall-header-left {
     grid-area: a;
     width: 100%;
@@ -398,7 +403,6 @@ export default {
   width: $boxWith;
   height: auto;
   min-height: $minHeight;
-  transition: $transition;
   margin: 0 auto;
   margin-top: $containerTop;
   .my_image_Exercise {
@@ -464,7 +468,6 @@ export default {
   height: auto;
   min-height: $minHeight;
   width: $boxWith;
-  transition: $transition;
   margin: 0 auto;
   margin-top: $containerTop;
   .tree_box {
@@ -596,6 +599,7 @@ export default {
         max-height: 270px;
         min-height: 249px;
         width: 300px;
+        transition: $transition;
         .card_background {
           width: 100%;
           height: 100%;
@@ -753,8 +757,8 @@ export default {
     grid-template-areas: 'a' 'b' 'c';
     width: $boxWithMiddle;
     grid-template-columns: 95%;
-    grid-template-rows: 1fr 1fr 100px;
-    gap: 0;
+    grid-template-rows: 1fr auto 100px;
+    gap: 30px 0px;
     justify-content: center;
     margin-top: 0px;
     .tree_box {
@@ -771,6 +775,10 @@ export default {
     .experience_buttom {
       grid-area: c;
     }
+  }
+  .my_project {
+    grid-template-rows: 100px auto 100px;
+    min-height: 0;
   }
 }
 @media (max-width: 1400px) {
@@ -801,6 +809,9 @@ export default {
     justify-content: center;
     .overall-header-left {
       grid-area: b;
+      .text-title {
+        align-self: center;
+      }
       .buttonFlex {
         align-self: center;
       }
@@ -838,20 +849,28 @@ export default {
   }
 }
 @media (max-width: 780px) {
+  .overall-header,
+  .introduction,
+  .experience,
+  .my_project {
+    opacity: 1 !important;
+  }
   .my_project {
     border-radius: 100px 100px 0 0;
   }
   .overall-header {
     .overall-header-left {
+      grid-template-rows: auto 50px 50px auto;
       .text-title {
         .typed-element {
+          font-size: $contexSizeH5;
           .typing {
-            font-size: $titleSizeH5;
+            font-size: $contexSizeH5;
           }
         }
       }
       .text-sign {
-        font-size: 16px;
+        font-size: $verySize;
       }
       .text-content {
         font-size: $contexSizeH5;
@@ -898,7 +917,7 @@ export default {
     .my_job_content {
       .job_card_container {
         .job_card {
-          width: 260px;
+          width: 255px;
         }
       }
     }
