@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "包图小白体";
+  src: url("https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/BaoTuXiaoBaiTi-2.6db277b7.ttf");
+}
+@font-face {
+  font-family: "斗鱼追光体";
+  src: url("https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/douyuFont-2.4bab8dd2.otf");
+}
+html,
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: $textFamily;
+  // 鼠标样式
+  cursor: url("https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/arrow.cur"), auto;
+  background-color: $bodyColor;
+}
+/************** 滚动条 **************/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  // display:none
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: $accentColor;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  background-color: $accentColor;
+}
+::selection {
+  background: $selection;
+  color: #fff;
+}

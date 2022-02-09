@@ -1,0 +1,77 @@
+/* 混合体：选择器/嵌套属性/父选择器 */
+@mixin About {
+  .about_me {
+    grid-area: a;
+    text-align: center;
+    font-family: $textTypes;
+    font-size: $titleSize;
+    transition: $transition;
+    .about_me_title {
+      position: relative;
+      z-index: 1;
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 85%;
+        left: -0.15em;
+        right: -0.15em;
+        bottom: 0;
+        background-color: $accentColor;
+        transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        border-radius: $borderRadius;
+      }
+      &:hover:after {
+        top: 0%;
+      }
+      &:hover {
+        transition: $transition;
+        color: #fff;
+      }
+    }
+  }
+}
+@mixin Exercise {
+  .my_Exercise {
+    align-self: center;
+    font-size: $titleMedium;
+    font-family: $textWrite;
+    .my_Exercise_text {
+      font-weight: 700;
+      margin-bottom: $bottom;
+    }
+    .my_Exercise_number {
+      font-weight: 400;
+    }
+    .my_Exercise_text_job {
+      color: $backgroundColor;
+      font-size: $buttonSize;
+      font-weight: 700;
+      margin-bottom: 23px;
+      text-shadow: $textShadow;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    .my_Exercise_number_job {
+      font-size: $buttonSize;
+      font-weight: 400;
+      text-shadow: $textShadow;
+    }
+  }
+}
+@mixin buttomHover {
+  .buttomDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid black;
+    font-size: $buttonSize;
+    font-family: $textTypes;
+  }
+}
+@mixin medias {
+}

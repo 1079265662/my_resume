@@ -1,0 +1,68 @@
+//! 颜色全变量
+// 背景颜色
+$bodyColor: #f1f2f6;
+// 主体颜色
+$accentColor: #2098d1;
+// 选中颜色
+$selection: #da1333;
+// 空白区域
+$backgroundColor: #ffffff;
+// 前端
+$Vue: #42b983;
+// 后端
+$java: #ffa502;
+// linux
+$linux: #1e90ff;
+
+//! 字体全变量
+// 页面字体
+$textFamily: Roboto, "Segoe UI", Arial, "Microsoft Yahei", sans-serif;
+// 打字机字体
+$textTypes: "包图小白体";
+// 前面字体
+$textSign: "斗鱼追光体";
+// 文本字体
+$textWrite: STXihei;
+// 边框弧度
+$borderRadius: 20px;
+// 通用底部边距
+$bottom: 30px;
+// 容器顶部内边距
+$containerTop: 50px;
+// 容器最小高度
+$minHeight: 100vh;
+// 按钮字体大小
+$buttonSize: 18px;
+// 大号字体大小
+$titleSize: 52px;
+// 中号字体大小
+$titleMedium: 26px;
+// 普通文章字体大小
+$contextSize: 21px;
+// 边框颜色
+$borderColor: rgb(0 0 0 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+// 触摸边框
+$borderHover: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+// 触摸边框白色
+$borderHoverWhite: rgb(255 255 255 / 80%) 0px 19px 38px, rgb(255 255 255 / 72%) 0px 15px 12px;
+// 技能树卡片小阴影
+$borderCard: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+// 项目卡片小阴影
+// $projectBorder: rgb(50 50 93 / 35%) 0 13px 27px -5px, rgb(0 0 0 / 40%) 0 8px 16px -8px;
+// 字体阴影
+$textShadow: 2px 2px 20px rgb(0 0 0 / 20%);
+
+//! 动画特效
+$transition: all 0.2s ease-in-out 0.16s;
+
+//! 移动端
+// 容器宽度(1920)
+$boxWith: 1600px;
+//容器宽度(1400px)
+$boxWithMiddle: 1060px;
+// 容器边距(1080 移动端)
+$paddingMobile: 15px;
+// 大号字体大小移动端
+$titleSizeH5: 30px;
+// 小号字体大小移动端
+$contexSizeH5: 21px;
