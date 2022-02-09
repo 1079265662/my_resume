@@ -928,6 +928,13 @@ export default {
   }
 }
 @media (max-width: 580px) {
+  .introduction {
+    .my_Exercise {
+      .my_Exercise_number {
+        margin-left: 5px;
+        display: flex;
+      }
+   }
   .my_project {
     .my_project_content {
       .my_project_content_flex {
