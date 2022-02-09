@@ -414,6 +414,9 @@ export default {
     padding-top: $containerTop;
     display: flex;
     justify-content: center;
+    .my_Exercise_number {
+      margin-left: 5px;
+    }
     .my_image {
       align-self: center;
       margin-left: 15%;
@@ -886,6 +889,7 @@ export default {
     .my_Exercise {
       font-size: $contexSizeH5;
       .my_Exercise_number {
+        margin-left: 0px;
         margin-top: 10px;
         display: block;
       }
@@ -930,11 +934,15 @@ export default {
 @media (max-width: 580px) {
   .introduction {
     .my_Exercise {
-      .my_Exercise_number {
-        margin-left: 5px;
+      .my_Exercise_text {
         display: flex;
+        .my_Exercise_number {
+          margin-left: 5px;
+          margin-top: 0px;
+        }
       }
-   }
+    }
+  }
   .my_project {
     .my_project_content {
       .my_project_content_flex {
