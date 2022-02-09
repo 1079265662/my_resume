@@ -13,7 +13,7 @@ module.exports = {
   // 你的职位
   my_Position: 'Web前端开发',
   // 毕业院校
-  my_colleges: '天津石油职业技术学院 (全日制)',
+  my_colleges: '天津石油职业技术学院',
   // 我的签名
   my_sign: '热爱前端 , 喜欢新技术 , 想成为一名开源者',
   // 页面打字机内容
