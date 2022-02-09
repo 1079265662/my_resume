@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="showDialog" title="提示" center>
+  <el-dialog v-model="showDialog" :title="content.project_title" center>
     <div class="dialog">
       <div class="dialog__title">
         项目类型
