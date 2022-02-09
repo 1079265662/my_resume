@@ -122,6 +122,7 @@ export default {
   line-height: 180%;
 }
 .dialog__image_box {
+  height: auto;
   display: flex;
   // justify-content: center;
   flex-wrap: wrap;

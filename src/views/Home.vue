@@ -98,7 +98,7 @@
             <div v-for="(item,index) in my_Skill" :key="index" class="skill_Progress_content">
               <div class="skill_Progress_content_text">{{ item.title }}</div>
               <div class="Progress">
-                <el-tooltip :content="item.introduce || '没有介绍'" placement="right" effect="light">
+                <el-tooltip :content="item.introduce || '没有介绍'" placement="top" effect="dark">
                   <el-progress :text-inside="true" :stroke-width="18" :color="item.color" :percentage="item.percentage" />
                 </el-tooltip>
               </div>
@@ -304,6 +304,7 @@ export default {
 :deep(.el-dialog) {
   width: 80%;
 }
+
 .overall-header,
 .introduction,
 .experience,
@@ -334,6 +335,7 @@ export default {
   height: auto;
   min-height: $minHeight;
   .overall-header-left {
+    box-sizing: border-box;
     grid-area: a;
     width: 100%;
     display: grid;
@@ -352,6 +354,7 @@ export default {
       align-self: center;
       font-size: $contextSize;
       font-family: $textSign;
+      line-height: 1.3;
     }
     .text-content {
       display: flex;
@@ -849,18 +852,19 @@ export default {
   }
 }
 @media (max-width: 780px) {
-  .overall-header,
-  .introduction,
-  .experience,
-  .my_project {
-    opacity: 1 !important;
-  }
   .my_project {
     border-radius: 100px 100px 0 0;
   }
   .overall-header {
+    overflow: hidden;
     .overall-header-left {
       grid-template-rows: auto 50px 50px auto;
+      .text-title,
+      .text-sign,
+      .text-content {
+        box-sizing: border-box;
+        padding: 0 $paddingMobile 0 $paddingMobile;
+      }
       .text-title {
         .typed-element {
           font-size: $contexSizeH5;

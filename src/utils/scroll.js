@@ -13,7 +13,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 延时执行方式（always（一直延时执行），once（只延时执行一次），onload（只在加载时延时执行））
     useDelay: 'onload',
     // 在移动端是否使用动画
-    mobile: false,
+    mobile: true,
     // 滚动的距离，单位可以用%，rem等
     // distance: '20px',
     // 其他可用的动画效果
@@ -39,7 +39,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 延时执行方式（always（一直延时执行），once（只延时执行一次），onload（只在加载时延时执行））
     useDelay: 'onload',
     // 在移动端是否使用动画
-    mobile: false,
+    mobile: true,
     // 滚动的距离，单位可以用%，rem等
     distance: '-30px',
     // 其他可用的动画效果
@@ -65,7 +65,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 延时执行方式（always（一直延时执行），once（只延时执行一次），onload（只在加载时延时执行））
     useDelay: 'onload',
     // 在移动端是否使用动画
-    mobile: false,
+    mobile: true,
     // 滚动的距离，单位可以用%，rem等
     distance: '-30px',
     // 其他可用的动画效果
@@ -96,7 +96,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 延时执行方式（always（一直延时执行），once（只延时执行一次），onload（只在加载时延时执行））
     useDelay: 'onload',
     // 在移动端是否使用动画
-    mobile: false,
+    mobile: true,
     // 滚动的距离，单位可以用%，rem等
     distance: '-30px',
     // 其他可用的动画效果
