@@ -808,10 +808,11 @@ export default {
   .overall-header {
     grid-template-areas: 'a' 'b' 'c';
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 100px;
+    grid-template-rows: 280px 1fr 100px;
     justify-content: center;
     .overall-header-left {
       grid-area: b;
+      grid-template-rows: repeat(4, 1fr);
       .text-title {
         align-self: center;
       }
@@ -858,7 +859,6 @@ export default {
   .overall-header {
     overflow: hidden;
     .overall-header-left {
-      grid-template-rows: auto 50px 50px auto;
       .text-title,
       .text-sign,
       .text-content {
