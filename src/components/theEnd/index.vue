@@ -344,7 +344,7 @@ export default {
   .message__text {
     font-family: $textTypes;
     line-height: 42px;
-    font-size: $contextSize;
+    font-size: $titleMedium;
     padding: 0 60px;
     max-width: 680px;
     margin: auto;
@@ -480,7 +480,7 @@ export default {
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 0px;
+    top: -35px;
     margin: 0px auto;
     width: 300px;
     display: flex;
@@ -583,9 +583,15 @@ export default {
       font-size: 3.5rem;
     }
   }
-  @media (max-height: 680px) {
+  @media (max-height: 820px) {
     .lamp {
       top: -120px;
+    }
+    .message__text {
+      font-size: $contextSize;
+    }
+    .error__content {
+      top: 58%;
     }
   }
   @media (max-width: 900px) {
@@ -644,7 +650,6 @@ export default {
       padding-bottom: 20px;
     }
     .message__text {
-      font-size: 16px;
       line-height: 2;
       padding-right: 20px;
       padding-left: 20px;
@@ -663,7 +668,7 @@ export default {
     .message__text {
       padding-left: 10px;
       padding-right: 10px;
-      font-size: 15px;
+      font-size: $contextSize;
     }
     .error__nav {
       margin-top: 20px;
