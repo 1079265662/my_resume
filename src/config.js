@@ -9,13 +9,13 @@ module.exports = {
   // 你的电话
   my_phone: 15031723750,
   // 你的邮箱
-  my_mail: '1079265662@163.com',
+  my_mail: '1079265662@qq.com',
   // 你的职位
   my_Position: 'Web前端开发',
   // 毕业院校
   my_colleges: '天津石油职业技术学院',
   // 我的签名
-  my_sign: '热爱前端 , 喜欢新技术 , 想成为一名开源者',
+  my_sign: '热爱前端 , 喜欢新技术 , 想成为全栈工程师',
   // 页面打字机内容
   my_typewriter: ['面试官你好', '我叫刘凯利', '来自天津', '面试的岗位是Web前端开发', '主要面向Vue和小程序的开发'],
   // 个人跳转内容
@@ -47,7 +47,7 @@ module.exports = {
     {
       title: '邮箱',
       svg: 'mail',
-      link: 'mailto: 1079265662@163.com'
+      link: 'mailto: 1079265662@qq.com'
     },
     {
       title: '微信',
@@ -58,29 +58,41 @@ module.exports = {
   // 简历下载 (pdf可以直接预览 docx只能下载)
   my_CV: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/%E5%88%98%E5%87%AF%E5%88%A9%20Web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%2015031723750.pdf',
   // 你的大头照
-  my_photo: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/demo.jpg',
+  my_photo: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/sunxiaochuan.jpg',
   // 个人简介
-  my_about: '我是一名Web前端工作者 , 面向于Vue和小程序方面 , 乐于接收新的技术 , 喜欢记录 . 我个人对于网站开发我有着浓厚的兴趣 , 喜欢用学习到的知识去设计与编写一些独特的网站 , 毕竟兴趣才是我最好的老师。我是一名Web前端工作者 , 面向于Vue和小程序方面 , 乐于接收新的技术 , 喜欢记录 . 我个人对于网站开发我有着浓厚的兴趣 , 喜欢用学习到的知识去设计与编写一些独特的网站 , 毕竟兴趣才是我最好的老师我是一名Web前端工作者 ',
+  my_about: '我是一名Web前端工作者，面向于Vue和小程序方面，乐于接收新的技术，喜欢记录。我个人对于网站开发我有着浓厚的兴趣 , 喜欢用学习到的知识去设计与编写一些独特的网站。工作中会和后端 产品 ui进行高效沟通，及时完成工作需求，能够承受工作压力。工作之余经常总结新技术、新知识，并且记录在个人播客中。',
   // 前端数据
   my_web: {
     // 是否显示
     show: true,
     // 百分比
-    percentage: 75
+    percentage: 75,
+    // 前端名称
+    title: '前端',
+    // 前端内容
+    context: 'HTML，CSS，Js，Vue，React ...'
   },
   // 后端数据
   my_java: {
     // 是否显示
     show: true,
     // 百分比
-    percentage: 10
+    percentage: 10,
+    // 名称
+    title: '后端',
+    // 内容
+    context: 'Java，GO，PHP，Python，表结构 ...'
   },
   // 操作系统
   my_linux: {
     // 是否显示
     show: true,
     // 百分比
-    percentage: 5
+    percentage: 5,
+    // 名称
+    title: '系统',
+    // 内容
+    context: 'Nginx，Linux，Docker，Apache ...'
   },
   // 技能点
   my_Skill: [
@@ -154,15 +166,15 @@ module.exports = {
     },
     {
       // 公司名称
-      titles: '华北利星行机械',
+      titles: '天津黑潮有限公司',
       // 公司logo
       image: 'https://www.lshmnc.com.cn/res/LXHome/structure/3.jpg',
       // 在职岗位
       post: 'Web前端开发(全职)',
       // 时间
-      time: '2021-08-27 to Present',
+      time: '2020-11-27 to 2021-6-01',
       // 卡片背景图
-      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/wallhaven-3k6g16.jpg'
+      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/tianjing.jpg'
     },
     {
       // 公司名称
@@ -174,7 +186,7 @@ module.exports = {
       // 时间
       time: '2021-08-27 to Present',
       // 卡片背景图
-      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/wallhaven-3k6g16.jpg'
+      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/beijing.jpg'
     }
   ],
   // 工作经历内容
@@ -212,7 +224,38 @@ module.exports = {
     },
     {
       // --------------- 卡片背景图
-      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/demo.jpg',
+      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/wallhaven-kw8dm7.jpg',
+      // --------------- 配置选项
+      // 是否显示项目类型
+      project_type: true,
+      // --------------- 展示内容
+      // 标题
+      project_title: '矿山OA系统',
+      // 简介/背景
+      project_Introduction: '华北利星行官方小程序 用于提供挖机资讯和收集用户购买意向',
+      // 技术栈/开发软件
+      project_software: '微信小程序 + Vant组件库',
+      // 开发周期
+      project_time: '2021年2月28日 ➡ 2021年8月26日',
+      // 项目类型
+      project_style: '企业项目',
+      // 项目职责
+      project_duty: '        <p>1. 负责可视化图表展示生产数据、员工信息管理、员工考勤管理、生产问题管理。</p> <p>2. 负责可视化图表展示生产数据、员工信息管理、员工考勤管理、生产问题管理。</p>',
+      // 项目预览(图片)
+      project_image: [
+        {
+          src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
+          title: '第一张'
+        },
+        {
+          src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
+          title: '第二张'
+        }
+      ]
+    },
+    {
+      // --------------- 卡片背景图
+      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/wallhaven-83z8g2.jpg',
       // --------------- 配置选项
       // 是否显示项目类型
       project_type: true,
@@ -243,38 +286,7 @@ module.exports = {
     },
     {
       // --------------- 卡片背景图
-      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/demo.jpg',
-      // --------------- 配置选项
-      // 是否显示项目类型
-      project_type: true,
-      // --------------- 展示内容
-      // 标题
-      project_title: '华北利星行小程序',
-      // 简介/背景
-      project_Introduction: '华北利星行官方小程序 用于提供挖机资讯和收集用户购买意向',
-      // 技术栈/开发软件
-      project_software: '微信小程序 + Vant组件库',
-      // 开发周期
-      project_time: '2021年2月28日 ➡ 2021年8月26日',
-      // 项目类型
-      project_style: '企业项目',
-      // 项目职责
-      project_duty: '        <p>1. 负责可视化图表展示生产数据、员工信息管理、员工考勤管理、生产问题管理。</p> <p>2. 负责可视化图表展示生产数据、员工信息管理、员工考勤管理、生产问题管理。</p>',
-      // 项目预览(图片)
-      project_image: [
-        {
-          src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
-          title: '第一张'
-        },
-        {
-          src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
-          title: '第二张'
-        }
-      ]
-    },
-    {
-      // --------------- 卡片背景图
-      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/demo.jpg',
+      cardBackground: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/wallhaven-r26v6w.jpg',
       // --------------- 配置选项
       // 是否显示项目类型
       project_type: true,

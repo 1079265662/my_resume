@@ -66,8 +66,8 @@
                 <div class="percentage">
                   <count-to ref="webPercentage" :start-val="0" :end-val="my_web.percentage" :duration="8000" :autoplay="false" /><span>%</span>
                 </div>
-                <div class="suject">前端</div>
-                <div class="frame">HTML，CSS，Js，Vue，React ...</div>
+                <div class="suject">{{ my_web.title }}</div>
+                <div class="frame">{{ my_web.context }}</div>
               </div>
               <SvgIcon icon-class="HTML5" class="webCard" />
             </div>
@@ -77,8 +77,8 @@
                 <div class="percentage">
                   <count-to ref="javaPercentage" :start-val="0" :end-val="my_java.percentage" :duration="8000" :autoplay="false" /><span>%</span>
                 </div>
-                <div class="suject">后端</div>
-                <div class="frame">Java，GO，PHP，Python，表结构 ...</div>
+                <div class="suject">{{ my_java.title }}</div>
+                <div class="frame">{{ my_java.context }}</div>
               </div>
               <SvgIcon icon-class="java" class="webCard" />
             </div>
@@ -88,8 +88,8 @@
                 <div class="percentage">
                   <count-to ref="linuxPercentage" :start-val="0" :end-val="my_linux.percentage" :duration="8000" :autoplay="false" /><span>%</span>
                 </div>
-                <div class="suject">Linux</div>
-                <div class="frame">Nginx，Linux，Docker，Apache ...</div>
+                <div class="suject">{{ my_linux.title }}</div>
+                <div class="frame">{{ my_linux.context }}</div>
               </div>
               <SvgIcon icon-class="linux" class="webCard" />
             </div>
@@ -115,7 +115,7 @@
           <div v-for="(item,index) in my_experience" :key="index" class="job_card">
             <div class="card_background" :style="{background: 'url('+ item.cardBackground +')'}" />
             <div class="job_content my_Exercise">
-              <el-image class="job_content_image" :src="item.image" fit="fill" />
+              <el-image class="job_content_image" :src="item.image" fit="cover" />
               <div class="my_Exercise_text_job">公司:&nbsp;<span class="my_Exercise_number_job">{{ item.titles }}</span></div>
               <div class="my_Exercise_text_job">职位:&nbsp;<span class="my_Exercise_number_job">{{ item.post }}</span></div>
               <div class="my_Exercise_text_job">时间:&nbsp;<span class="my_Exercise_number_job">{{ item.time }}</span></div>
@@ -596,7 +596,7 @@ export default {
       grid-area: b;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
       align-content: flex-start;
       gap: 60px;
       .job_card {
@@ -706,7 +706,7 @@ export default {
         transition: $transition;
         padding: 20px;
         .my_project_title {
-          font-size: $titleMedium;
+          font-size: 24px;
           font-family: $textSign;
           margin-bottom: $bottom;
         }
@@ -754,7 +754,7 @@ export default {
     align-self: center;
   }
 }
-@media (max-width: 1630px) {
+@media (max-width: 1700px) {
   .introduction {
     width: $boxWithMiddle;
     margin-top: 0px;
@@ -865,6 +865,7 @@ export default {
       .text-title,
       .text-sign,
       .text-content {
+        align-self: flex-end;
         box-sizing: border-box;
         padding: 0 $paddingMobile 0 $paddingMobile;
       }
