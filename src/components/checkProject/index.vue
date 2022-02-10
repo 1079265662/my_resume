@@ -33,8 +33,11 @@
       <div class="dialog__title">
         项目预览
       </div>
-      <div class="dialog__image_box">
-        <el-image v-for="(item, index) in content.project_image" :key="index" class="dialog__image" :src="item.src" @click="openLightbox(index)" />
+      <div v-if="content.project_image && content.project_image === ''" class="dialog__image_box">
+        <el-image v-for="(item, index) in content.project_image" :key="index" lazy class="dialog__image" :src="item.src" @click="openLightbox(index)" />
+      </div>
+      <div v-else class="dialog_text">
+        机密项目不可以看哦
       </div>
       <!-- 灯箱 -->
       <vue-easy-lightbox esc-disabled move-disabled :visible="visible" :imgs="imgs" :index="index" @hide="handleHide" />

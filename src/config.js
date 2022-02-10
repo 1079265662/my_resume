@@ -273,16 +273,7 @@ module.exports = {
       // 项目职责
       project_duty: '        <p>1. 负责可视化图表展示生产数据、员工信息管理、员工考勤管理、生产问题管理。</p> <p>2. 负责可视化图表展示生产数据、员工信息管理、员工考勤管理、生产问题管理。</p>',
       // 项目预览(图片)
-      project_image: [
-        {
-          src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
-          title: '第一张'
-        },
-        {
-          src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
-          title: '第二张'
-        }
-      ]
+      project_image: ''
     },
     {
       // --------------- 卡片背景图
