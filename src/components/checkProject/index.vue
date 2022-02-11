@@ -33,7 +33,7 @@
       <div class="dialog__title">
         项目预览
       </div>
-      <div v-if="content.project_image && content.project_image === ''" class="dialog__image_box">
+      <div v-if="content.project_image !== '' && content.project_image !== [] && content.project_image" class="dialog__image_box">
         <el-image v-for="(item, index) in content.project_image" :key="index" lazy class="dialog__image" :src="item.src" @click="openLightbox(index)" />
       </div>
       <div v-else class="dialog_text">
