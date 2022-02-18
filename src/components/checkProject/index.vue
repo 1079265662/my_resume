@@ -126,6 +126,7 @@ export default {
 }
 .dialog__image_box {
   height: auto;
+  min-height: 185px;
   display: flex;
   // justify-content: center;
   flex-wrap: wrap;

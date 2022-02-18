@@ -299,10 +299,6 @@ module.exports = {
         {
           src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
           title: '第一张'
-        },
-        {
-          src: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/banner_image/banner_6.jpg',
-          title: '第二张'
         }
       ]
     }
