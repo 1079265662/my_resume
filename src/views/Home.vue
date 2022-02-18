@@ -129,6 +129,11 @@
     </div>
     <!-- 项目经历 -->
     <div class="my_project">
+      <div class="my_project_background">
+        <div class="g-polygon-1" />
+        <div class="g-polygon-2" />
+        <div class="g-polygon-3" />
+      </div>
       <div id="reveal-project" class="my_job_title">
         <div class="about_me"><span class="about_me_title">项目经历</span></div>
       </div>
@@ -307,8 +312,7 @@ export default {
 
 .overall-header,
 .introduction,
-.experience,
-.my_project {
+.experience {
   transition: $transition;
 }
 .upKey {
@@ -654,16 +658,66 @@ export default {
 }
 .my_project {
   opacity: v-bind('state.project');
+  position: relative;
   display: grid;
   grid-template-areas: 'a' 'b' 'c';
   grid-template-rows: 100px 1fr 100px;
   gap: 30px 0;
   height: auto;
   min-height: $minHeight;
-  background: $backgroundColor;
+  // background: $backgroundColor;
   border-radius: 200px 200px 0 0;
   margin-top: 50px;
   padding-bottom: 63px;
+  .my_project_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .g-polygon-1 {
+      bottom: 100px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 714px;
+      height: 390px;
+      background: linear-gradient(#ffee55, #fdee99);
+      clip-path: polygon(0 10%, 30% 0, 100% 40%, 70% 100%, 20% 90%);
+    }
+
+    .g-polygon-2 {
+      bottom: 0px;
+      left: 30%;
+      transform: translate(-50%, 0);
+      width: 1000px;
+      height: 450px;
+      background: linear-gradient(-36deg, #e950d1, #f980d9);
+      clip-path: polygon(10% 0, 100% 70%, 100% 100%, 20% 90%);
+    }
+
+    .g-polygon-3 {
+      bottom: 0px;
+      left: 70%;
+      transform: translate(-50%, 0);
+      width: 1000px;
+      height: 450px;
+      background: rgba(87, 80, 233);
+      clip-path: polygon(80% 0, 100% 70%, 100% 100%, 20% 90%);
+    }
+    & > div {
+      position: absolute;
+      opacity: 0.5;
+      border-radius: 200px 200px 0 0;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      backdrop-filter: blur(150px);
+      z-index: 1;
+    }
+  }
   .my_project_content {
     box-sizing: border-box;
     margin: 0 auto;
@@ -671,6 +725,7 @@ export default {
     width: 1200px;
     padding: 0 100px 0 100px;
     transition: $transition;
+    z-index: 12;
     .my_project_content_flex {
       display: flex;
       flex-wrap: wrap;
@@ -748,10 +803,12 @@ export default {
   .my_job_title {
     grid-area: a;
     align-self: center;
+    z-index: 12;
   }
   .experience_buttom {
     justify-self: center;
     align-self: center;
+    z-index: 12;
   }
 }
 @media (max-width: 1700px) {
