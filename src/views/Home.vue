@@ -665,7 +665,7 @@ export default {
   gap: 30px 0;
   height: auto;
   min-height: $minHeight;
-  // background: $backgroundColor;
+  background: $backgroundColor;
   border-radius: 200px 200px 0 0;
   margin-top: 50px;
   padding-bottom: 63px;
@@ -681,6 +681,7 @@ export default {
       height: 390px;
       background: linear-gradient(#ffee55, #fdee99);
       clip-path: polygon(0 10%, 30% 0, 100% 40%, 70% 100%, 20% 90%);
+      transition: $transition;
     }
 
     .g-polygon-2 {
@@ -691,6 +692,7 @@ export default {
       height: 450px;
       background: linear-gradient(-36deg, #e950d1, #f980d9);
       clip-path: polygon(10% 0, 100% 70%, 100% 100%, 20% 90%);
+      transition: $transition;
     }
 
     .g-polygon-3 {
@@ -701,6 +703,7 @@ export default {
       height: 450px;
       background: rgba(87, 80, 233);
       clip-path: polygon(80% 0, 100% 70%, 100% 100%, 20% 90%);
+      transition: $transition;
     }
     & > div {
       position: absolute;
@@ -842,10 +845,25 @@ export default {
   .my_project {
     grid-template-rows: 100px auto 100px;
     min-height: 0;
+    .my_project_background {
+      .g-polygon-3 {
+        width: 825px;
+      }
+    }
   }
 }
 @media (max-width: 1400px) {
   .my_project {
+    .my_project_background {
+      .g-polygon-2 {
+        width: 400px;
+      }
+
+      .g-polygon-3 {
+        width: 650px;
+        left: 70%;
+      }
+    }
     .my_project_content {
       width: 850px;
     }
@@ -901,6 +919,9 @@ export default {
   }
   .my_project {
     width: 100%;
+    .my_project_background {
+      display: none;
+    }
     .my_project_content {
       justify-content: center;
       width: 100%;
