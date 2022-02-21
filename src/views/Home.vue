@@ -920,7 +920,12 @@ export default {
   .my_project {
     width: 100%;
     .my_project_background {
-      display: none;
+      .g-polygon-1 {
+        width: 400px;
+      }
+      .g-polygon-3 {
+        width: 500px;
+      }
     }
     .my_project_content {
       justify-content: center;
@@ -1009,6 +1014,19 @@ export default {
       }
     }
   }
+  .my_project {
+    width: 100%;
+    .my_project_background {
+      .g-polygon-2 {
+        left: 0%;
+        width: 300px;
+      }
+      .g-polygon-3 {
+        right: 0;
+        width: 345px;
+      }
+    }
+  }
 }
 @media (max-width: 580px) {
   .introduction {
@@ -1023,6 +1041,9 @@ export default {
     }
   }
   .my_project {
+    .my_project_background {
+      display: none;
+    }
     .my_project_content {
       .my_project_content_flex {
         .my_project_box {
