@@ -2,6 +2,8 @@
 页面参数配置表
 */
 module.exports = {
+  // 是否显示小爱心
+  loveThis: true,
   // 页面标题
   my_title: '个人简历_刘凯利',
   // 你的名字

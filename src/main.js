@@ -20,6 +20,8 @@ const req = require.context('@/assets/svg', false, /\.svg$/) // 这是svg文件�
 req.keys().map(req)
 // 导入数字增加特效
 import countTo from 'vue3-count-to'
+// 导入配置文件
+const res = require('./config')
 // 设置Vue3的全局方法实例
 // 代替Vue2的 Vue.use的全局方法
 const app = createApp(App)
@@ -27,5 +29,7 @@ const app = createApp(App)
 app.component('SvgIcon', SvgIcon)
 // 挂载全局方法
 app.use(store).use(router).use(vuetyped).use(ElementPlus).use(countTo).use(VueEasyLightbox)
+// 原型链注册
+app.config.globalProperties.$t = res // 自定义添加
 // 挂载实例
 app.mount('#app')

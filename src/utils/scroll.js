@@ -78,9 +78,15 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
       state.experience = 1
     },
     afterReveal: function (ele) {
-      webPercentage.value.start()
-      javaPercentage.value.start()
-      linuxPercentage.value.start()
+      if (webPercentage.value) {
+        webPercentage.value.start()
+      }
+      if (javaPercentage.value) {
+        javaPercentage.value.start()
+      }
+      if (linuxPercentage.value) {
+        linuxPercentage.value.start()
+      }
     }
   })
   // 配置项目经历懒加载

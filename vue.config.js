@@ -26,7 +26,6 @@ module.exports = {
       .use('file-loader')
       .loader('file-loader')
   },
-
   configureWebpack: {
     // 配置标题名称
     name: name

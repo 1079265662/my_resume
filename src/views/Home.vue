@@ -9,18 +9,24 @@
     <div class="overall-header">
       <div id="reveal-heard" class="overall-header-left">
         <div class="text-title">
-          <vuetyped :strings="typewriter" :loop="true" :smart-backspace="true" :type-speed="120" :start-delay="1000">
+          <vuetyped :strings="$t.my_typewriter" :loop="true" :smart-backspace="true" :type-speed="120" :start-delay="1000">
             <div class="typing" />
           </vuetyped>
         </div>
-        <div class="text-sign">{{ my_sign }}</div>
+        <div class="text-sign">{{ $t.my_sign }}</div>
         <div class="text-content">
-          <div v-for="(item,index) in linkOut" :key="index" class="text-content-svg">
+          <div v-for="(item,index) in $t.my_Link" :key="index" class="text-content-svg">
             <el-tooltip :content="item.title || '我没写'" placement="bottom" effect="light">
               <a :href="item.link" target="_black">
                 <SvgIcon :icon-class="item.svg" />
               </a>
             </el-tooltip>
+          </div>
+          <div v-if="$t.loveThis">
+            <el-tooltip content="我喜欢这个简历" placement="bottom" effect="light">
+              <div :class="['loveBox','loveRed',loveState ? 'loveBoxAdm' : '']" @click="loveThis" />
+            </el-tooltip>
+
           </div>
         </div>
         <div class="buttomDiv buttonFlex hvr-bounce-to-top hvr-buzz-out " @click="gotoCV">查看我的简历</div>
@@ -35,20 +41,20 @@
       <!-- 个人介绍 -->
       <div id="reveal-introduce" class="my_image_Exercise">
         <div class="my_Exercise">
-          <div v-if="my_name !== '' && my_name !== null" class="my_Exercise_text">姓名: <span class="my_Exercise_number">{{ my_name }}</span> </div>
-          <div v-if="my_Position !== '' && my_Position !== null" class="my_Exercise_text">职位: <span class="my_Exercise_number">{{ my_Position }}</span> </div>
-          <div v-if="my_mail !== '' && my_mail !== null" class="my_Exercise_text">邮箱: <span class="my_Exercise_number">{{ my_mail }}</span> </div>
-          <div v-if="my_phone !== '' && my_phone !== null" class="my_Exercise_text">电话: <span class="my_Exercise_number">{{ my_phone }}</span> </div>
-          <div v-if="my_colleges !== '' && my_colleges !== null" class="my_Exercise_text">毕业院校: <span class="my_Exercise_number">{{ my_colleges }}</span> </div>
+          <div v-if="$t.my_name !== '' && $t.my_name" class="my_Exercise_text">姓名: <span class="my_Exercise_number">{{ $t.my_name }}</span> </div>
+          <div v-if="$t.my_Position !== '' && $t.my_Position" class="my_Exercise_text">职位: <span class="my_Exercise_number">{{ $t.my_Position }}</span> </div>
+          <div v-if="$t.my_mail !== '' && $t.my_mail" class="my_Exercise_text">邮箱: <span class="my_Exercise_number">{{ $t.my_mail }}</span> </div>
+          <div v-if="$t.my_phone !== '' && $t.my_phone" class="my_Exercise_text">电话: <span class="my_Exercise_number">{{ $t.my_phone }}</span> </div>
+          <div v-if="$t.my_colleges !== '' && $t.my_colleges" class="my_Exercise_text">毕业院校: <span class="my_Exercise_number">{{ $t.my_colleges }}</span> </div>
         </div>
         <div class="my_image">
-          <el-image lazy :src="my_photo" fit="fill" />
+          <el-image lazy :src="$t.my_photo" fit="fill" />
         </div>
       </div>
       <!-- 关于我 -->
       <div id="reveal-introduce" class="content_text">
         <div class="about_me"><span class="about_me_title">关于我</span></div>
-        <div class="about_me_content">&emsp;&emsp;{{ my_about }}</div>
+        <div class="about_me_content">&emsp;&emsp;{{ $t.my_about }}</div>
       </div>
       <div id="reveal-heard" class="my_job_buttom">
         <div class="buttomDiv buttonFlex hvr-wobble-vertical hvr-bounce-to-right" @click="gotoExperience">继续浏览</div>
@@ -61,41 +67,39 @@
         <div class="about_me"><span class="about_me_title">技能树</span> </div>
         <div class="my_tree_card">
           <div class="skill_points">
-            <div v-if="my_web.show" class="skill_web">
+            <div v-if="$t.my_web.show" class="skill_web">
               <div class="skill_web_text">
                 <div class="percentage">
-                  <count-to ref="webPercentage" :start-val="0" :end-val="my_web.percentage" :duration="8000" :autoplay="false" /><span>%</span>
+                  <count-to ref="webPercentage" :start-val="0" :end-val="$t.my_web.percentage" :duration="8000" :autoplay="false" /><span>%</span>
                 </div>
-                <div class="suject">{{ my_web.title }}</div>
-                <div class="frame">{{ my_web.context }}</div>
+                <div class="suject">{{ $t.my_web.title }}</div>
+                <div class="frame">{{ $t.my_web.context }}</div>
               </div>
               <SvgIcon icon-class="HTML5" class="webCard" />
             </div>
-
-            <div v-if="my_java.show" class="skill_end">
+            <div v-if="$t.my_java.show" class="skill_end">
               <div class="skill_web_text">
                 <div class="percentage">
-                  <count-to ref="javaPercentage" :start-val="0" :end-val="my_java.percentage" :duration="8000" :autoplay="false" /><span>%</span>
+                  <count-to ref="javaPercentage" :start-val="0" :end-val="$t.my_java.percentage" :duration="8000" :autoplay="false" /><span>%</span>
                 </div>
-                <div class="suject">{{ my_java.title }}</div>
-                <div class="frame">{{ my_java.context }}</div>
+                <div class="suject">{{ $t.my_java.title }}</div>
+                <div class="frame">{{ $t.my_java.context }}</div>
               </div>
               <SvgIcon icon-class="java" class="webCard" />
             </div>
-
-            <div v-if="my_linux.show" class="skill_linux">
+            <div v-if="$t.my_linux.show" class="skill_linux">
               <div class="skill_web_text">
                 <div class="percentage">
-                  <count-to ref="linuxPercentage" :start-val="0" :end-val="my_linux.percentage" :duration="8000" :autoplay="false" /><span>%</span>
+                  <count-to ref="linuxPercentage" :start-val="0" :end-val="$t.my_linux.percentage" :duration="8000" :autoplay="false" /><span>%</span>
                 </div>
-                <div class="suject">{{ my_linux.title }}</div>
-                <div class="frame">{{ my_linux.context }}</div>
+                <div class="suject">{{ $t.my_linux.title }}</div>
+                <div class="frame">{{ $t.my_linux.context }}</div>
               </div>
               <SvgIcon icon-class="linux" class="webCard" />
             </div>
           </div>
           <div class="skill_Progress">
-            <div v-for="(item,index) in my_Skill" :key="index" class="skill_Progress_content">
+            <div v-for="(item,index) in $t.my_Skill" :key="index" class="skill_Progress_content">
               <div class="skill_Progress_content_text">{{ item.title }}</div>
               <div class="Progress">
                 <el-tooltip :content="item.introduce || '没有介绍'" placement="top" effect="dark">
@@ -112,7 +116,7 @@
           <div class="about_me"><span class="about_me_title">工作经历</span></div>
         </div>
         <div class="job_card_container">
-          <div v-for="(item,index) in my_experience" :key="index" class="job_card">
+          <div v-for="(item,index) in $t.my_experience" :key="index" class="job_card">
             <div class="card_background" :style="{background: 'url('+ item.cardBackground +')'}" />
             <div class="job_content my_Exercise">
               <el-image lazy class="job_content_image" :src="item.image" fit="cover" />
@@ -139,7 +143,7 @@
       </div>
       <div class="my_project_content">
         <div id="reveal-project" class="my_project_content_flex">
-          <div v-for="(item,index) in my_project" :key="index" class="my_project_box">
+          <div v-for="(item,index) in $t.my_project" :key="index" class="my_project_box">
             <el-image lazy class="my_project_box_img" :src="item.cardBackground" fit="cover" />
             <div class="my_project_box_text">
               <div>
@@ -174,7 +178,7 @@
 
 <script>
 const res = require('@/config.js')
-import { onMounted, reactive, toRefs, ref } from 'vue'
+import { onMounted, reactive, toRefs, ref, getCurrentInstance } from 'vue'
 // 导入scrollReveal
 import scrollReveal from 'scrollreveal'
 // 导入配置的scroll
@@ -190,6 +194,8 @@ export default {
     theEnd
   },
   setup () {
+    // 注册实例Vue2 this
+    const { proxy } = getCurrentInstance()
     // 操作Dom
     const webPercentage = ref(null)
     const javaPercentage = ref(null)
@@ -198,40 +204,10 @@ export default {
     const data = reactive({
       // 声明 scrollReveal组件
       scrollReveal: scrollReveal(),
-      // 打字机内容
-      typewriter: res.my_typewriter,
-      // 跳转内容
-      linkOut: res.my_Link,
-      // 个人签名
-      my_sign: res.my_sign,
-      // 简历下载
-      my_CV: res.my_CV,
-      // 你的大头照
-      my_photo: res.my_photo,
-      // 关于我
-      my_about: res.my_about,
-      // 名字
-      my_name: res.my_name,
-      // 职位
-      my_Position: res.my_Position,
-      // 邮箱
-      my_mail: res.my_mail,
-      // 电话
-      my_phone: res.my_phone,
-      // 学校
-      my_colleges: res.my_colleges,
-      // 前端
-      my_web: res.my_web,
-      // 后端
-      my_java: res.my_java,
-      // 系统
-      my_linux: res.my_linux,
-      // 技能树
-      my_Skill: res.my_Skill,
-      // 在职公司
-      my_experience: res.my_experience,
-      // 工作经历
-      my_project: res.my_project,
+      // 点击爱心状态
+      loveState: false,
+      // 防抖
+      States: false,
       // 工作经历传值
       my_project_son: []
     })
@@ -250,7 +226,17 @@ export default {
     })
     // 下载简历
     const gotoCV = () => {
-      window.open(data.my_CV)
+      window.open(proxy.$t.my_CV)
+    }
+    // 点击爱心
+    const loveThis = () => {
+      if (data.States) return
+      data.States = true
+      setTimeout(() => {
+        data.States = false
+        data.loveState = !data.loveState
+      }, 1000)
+      data.loveState = !data.loveState
     }
     // 下滑到关于我
     const gotoIntroduction = () => {
@@ -286,7 +272,7 @@ export default {
     })
     // 结构导出
     const dataOut = toRefs(data)
-    return { ...dataOut, state, gotoCV, webPercentage, javaPercentage, linuxPercentage, gotoIntroduction, gotoExperience, gotoProject, checkProject, gotoTheEnd }
+    return { ...dataOut, state, gotoCV, webPercentage, javaPercentage, linuxPercentage, gotoIntroduction, gotoExperience, gotoProject, checkProject, gotoTheEnd, loveThis }
   }
 
 }
@@ -309,7 +295,15 @@ export default {
 :deep(.el-dialog) {
   width: 80%;
 }
+@keyframes sprite5 {
+  0% {
+    background-position: 0%;
+  }
 
+  100% {
+    background-position: 100%;
+  }
+}
 .overall-header,
 .introduction,
 .experience {
@@ -369,8 +363,27 @@ export default {
       font-size: $contextSize;
       width: 400px;
       height: 50px;
+      .loveBox {
+        height: 100%;
+        width: 50px;
+        margin: auto;
+        background-image: url('https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/heart.3c55287.png');
+        background-repeat: no-repeat;
+        background-size: 2900%;
+        cursor: pointer;
+      }
+      .loveRed {
+        background-position: 100%;
+      }
+      .loveBoxAdm {
+        animation: sprite5 1s steps(28) forwards;
+      }
       .text-content-svg {
-        align-self: center;
+        height: 100%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
     .buttonFlex {
@@ -860,7 +873,7 @@ export default {
       }
 
       .g-polygon-3 {
-        width: 650px;
+        width: 645px;
         left: 70%;
       }
     }
@@ -874,7 +887,7 @@ export default {
   .overall-header {
     .overall-header-left {
       .text-sign {
-        font-size: $contexSizeH5;
+        font-size: 22px;
       }
     }
   }
