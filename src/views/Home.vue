@@ -363,6 +363,7 @@ export default {
       font-size: $contextSize;
       width: 400px;
       height: 50px;
+      // 设置爱心小盒子
       .loveBox {
         height: 100%;
         width: 50px;
@@ -372,9 +373,11 @@ export default {
         background-size: 2900%;
         cursor: pointer;
       }
+      // 把长条爱心背景图定格到最后
       .loveRed {
         background-position: 100%;
       }
+      // 设置点击后的动画效果
       .loveBoxAdm {
         animation: sprite5 1s steps(28) forwards;
       }

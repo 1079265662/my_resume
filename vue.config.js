@@ -1,4 +1,6 @@
 
+// 引入该插件(gzip压缩)
+const CompressionPlugin = require('compression-webpack-plugin')
 const path = require('path')
 const res = require('./src/config')
 const name = res.my_title || '个人简历' // page title
@@ -28,13 +30,28 @@ module.exports = {
   },
   configureWebpack: {
     // 配置标题名称
-    name: name
+    name: name,
+    plugins: [
+      new CompressionPlugin({
+        filename: '[path].br[query]',
+        algorithm: 'brotliCompress',
+        test: /\.(js|css|html|svg)$/,
+        compressionOptions: { level: 11 },
+        threshold: 10240,
+        minRatio: 0.8,
+        deleteOriginalAssets: true
+      })
+    ]
   },
   devServer: {
     // 自动打开
     open: true
   },
   css: {
+    // 是否使用css分离插件 ExtractTextPlugin
+    extract: true,
+    // 开启 CSS source maps?
+    sourceMap: false,
     loaderOptions: {
       scss: {
         // 导入sass全局变量

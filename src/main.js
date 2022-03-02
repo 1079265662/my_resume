@@ -25,11 +25,23 @@ const res = require('./config')
 // 设置Vue3的全局方法实例
 // 代替Vue2的 Vue.use的全局方法
 const app = createApp(App)
-// 创建全局组件，以便任何地方使用
-app.component('SvgIcon', SvgIcon)
+// 添加的原型链方法
+const Proper = {
+  install (app) {
+    // 通过config.globalProperties给其添加原型链方法
+    // app.config.globalProperties.$要创建的原型链方法名 = 创建的虚拟Dom方法
+    app.config.globalProperties.$t = res // 自定义添加
+  }
+}
+// 创建全局组件
+const components = {
+  install (app) {
+    // 创建全局组件
+    app.component('SvgIcon', SvgIcon)
+  }
+}
 // 挂载全局方法
-app.use(store).use(router).use(vuetyped).use(ElementPlus).use(countTo).use(VueEasyLightbox)
-// 原型链注册
-app.config.globalProperties.$t = res // 自定义添加
+app.use(store).use(components).use(Proper).use(router).use(vuetyped).use(ElementPlus).use(countTo).use(VueEasyLightbox)
+
 // 挂载实例
 app.mount('#app')
