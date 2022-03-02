@@ -30,20 +30,22 @@ module.exports = {
   configureWebpack: {
     // 配置标题名称
     name: name,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          ecma: undefined,
-          warnings: false,
-          parse: {},
-          compress: {
-            drop_console: true,
-            drop_debugger: false,
-            pure_funcs: ['console.log'] // 移除console
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            ecma: undefined,
+            warnings: false,
+            parse: {},
+            compress: {
+              drop_console: true,
+              drop_debugger: false,
+              pure_funcs: ['console.log'] // 移除console
+            }
           }
-        }
-      })
-    ]
+        })
+      ]
+    }
   },
   devServer: {
     // 自动打开
