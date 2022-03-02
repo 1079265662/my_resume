@@ -1,3 +1,5 @@
+// 导入去除console
+const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 const res = require('./src/config')
 const name = res.my_title || '个人简历' // page title
@@ -27,7 +29,21 @@ module.exports = {
   },
   configureWebpack: {
     // 配置标题名称
-    name: name
+    name: name,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          ecma: undefined,
+          warnings: false,
+          parse: {},
+          compress: {
+            drop_console: true,
+            drop_debugger: false,
+            pure_funcs: ['console.log'] // 移除console
+          }
+        }
+      })
+    ]
   },
   devServer: {
     // 自动打开
