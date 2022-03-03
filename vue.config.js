@@ -1,7 +1,7 @@
 // 判断是否是生产环境
 const isProduction = process.env.NODE_ENV === 'production'
 // 导入去除console 不需要
-// const TerserPlugin = require('terser-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 // 导入配置文件
 const res = require('./src/config')
@@ -41,24 +41,24 @@ module.exports = {
   },
   configureWebpack: {
     // 配置标题名称
-    name: name
+    name: name,
     // 去除console
-    // optimization: {
-    //   minimizer: [
-    //     new TerserPlugin({
-    //       terserOptions: {
-    //         ecma: undefined,
-    //         warnings: false,
-    //         parse: {},
-    //         compress: {
-    //           drop_console: true,
-    //           drop_debugger: false, // 默认false，设置为true, 则会删除所有console.* 相关的代码。
-    //           pure_funcs: ['console.log'] // 移除console
-    //         }
-    //       }
-    //     })
-    //   ]
-    // }
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            ecma: undefined,
+            warnings: false,
+            parse: {},
+            compress: {
+              drop_console: true,
+              drop_debugger: false, // 默认false，设置为true, 则会删除所有console.* 相关的代码。
+              pure_funcs: ['console.log'] // 移除console
+            }
+          }
+        })
+      ]
+    }
   },
   devServer: {
     // 自动打开
