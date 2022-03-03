@@ -1,10 +1,28 @@
-// 导入去除console
-const TerserPlugin = require('terser-webpack-plugin')
+// 判断是否是生产环境
+const isProduction = process.env.NODE_ENV === 'production'
+// 导入去除console 不需要
+// const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 const res = require('./src/config')
 const name = res.my_title || '个人简历' // page title
 module.exports = {
   chainWebpack: config => {
+    if (isProduction) {
+      // 修改标题名
+      // 设置标题  默认不设置的话是项目名字
+      config.plugin('html').tap(args => {
+        args[0].title = '默认标题123'
+        return args
+      })
+    } else {
+      // 修改标题名
+      // 设置标题  默认不设置的话是项目名字
+      config.plugin('html').tap(args => {
+        args[0].title = '默认标题'
+        return args
+      })
+    }
+
     // Vue3导入Svg
     const svgRule = config.module.rule('svg')
     // 清除已有的所有 loader。
@@ -29,23 +47,24 @@ module.exports = {
   },
   configureWebpack: {
     // 配置标题名称
-    name: name,
-    optimization: {
-      minimizer: [
-        new TerserPlugin({
-          terserOptions: {
-            ecma: undefined,
-            warnings: false,
-            parse: {},
-            compress: {
-              drop_console: true,
-              drop_debugger: false,
-              pure_funcs: ['console.log'] // 移除console
-            }
-          }
-        })
-      ]
-    }
+    name: name
+    // 去除console
+    // optimization: {
+    //   minimizer: [
+    //     new TerserPlugin({
+    //       terserOptions: {
+    //         ecma: undefined,
+    //         warnings: false,
+    //         parse: {},
+    //         compress: {
+    //           drop_console: true,
+    //           drop_debugger: false, // 默认false，设置为true, 则会删除所有console.* 相关的代码。
+    //           pure_funcs: ['console.log'] // 移除console
+    //         }
+    //       }
+    //     })
+    //   ]
+    // }
   },
   devServer: {
     // 自动打开
