@@ -3,7 +3,9 @@ const isProduction = process.env.NODE_ENV === 'production'
 // 导入去除console 不需要
 // const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
+// 导入配置文件
 const res = require('./src/config')
+// 设置名称
 const name = res.my_title || '个人简历' // page title
 module.exports = {
   chainWebpack: config => {
@@ -11,7 +13,7 @@ module.exports = {
       // 修改标题名
       // 设置标题  默认不设置的话是项目名字
       config.plugin('html').tap(args => {
-        args[0].title = '默认标题123'
+        args[0].title = name
         return args
       })
     } else {
