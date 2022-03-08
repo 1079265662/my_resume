@@ -9,9 +9,9 @@ import 'hover.css'
 import './styles/main.scss'
 // 导入打字机
 import vuetyped from 'vue3typed'
-// 导入饿了么ui
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+// // 导入饿了么ui
+// import ElementPlus from 'element-plus'
+// import 'element-plus/dist/index.css'
 // 导入灯箱
 import VueEasyLightbox from 'vue-easy-lightbox'
 // 导入SvgIcon组件
@@ -41,7 +41,7 @@ const components = {
   }
 }
 // 挂载全局方法
-app.use(store).use(components).use(Proper).use(router).use(vuetyped).use(ElementPlus).use(countTo).use(VueEasyLightbox)
+app.use(store).use(components).use(Proper).use(router).use(vuetyped).use(countTo).use(VueEasyLightbox) // .use(ElementPlus)
 
 // 挂载实例
 app.mount('#app')

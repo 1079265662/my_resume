@@ -7,6 +7,10 @@ const path = require('path')
 const res = require('./src/config')
 // 设置名称
 const name = res.my_title || '个人简历' // page title
+// webpack.config.js
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 module.exports = {
   chainWebpack: config => {
     // 设置默认的标题名称 配合 路由beforeEach 默认不设置的话是项目名字
@@ -37,6 +41,14 @@ module.exports = {
       .loader('file-loader')
   },
   configureWebpack: {
+    plugins: [
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()]
+      })
+    ],
     // 配置标题名称
     name: name,
     // 去除console
