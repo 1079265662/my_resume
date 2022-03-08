@@ -1,5 +1,5 @@
 // 判断是否是生产环境
-const isProduction = process.env.NODE_ENV === 'production'
+// const isProduction = process.env.NODE_ENV === 'production'
 // 导入去除console 不需要
 const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
@@ -9,14 +9,11 @@ const res = require('./src/config')
 const name = res.my_title || '个人简历' // page title
 module.exports = {
   chainWebpack: config => {
-    // 判断是否是生产环境
-    if (isProduction) {
-      // 设置默认的标题名称 配合 路由beforeEach 默认不设置的话是项目名字
-      config.plugin('html').tap(args => {
-        args[0].title = name
-        return args
-      })
-    }
+    // 设置默认的标题名称 配合 路由beforeEach 默认不设置的话是项目名字
+    config.plugin('html').tap(args => {
+      args[0].title = name
+      return args
+    })
     // Vue3导入Svg
     const svgRule = config.module.rule('svg')
     // 清除已有的所有 loader。
