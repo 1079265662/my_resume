@@ -9,7 +9,7 @@ import 'hover.css'
 import './styles/main.scss'
 // 导入打字机
 import vuetyped from 'vue3typed'
-// // 导入饿了么ui
+// 导入饿了么ui(已使用自动导入 不需要全局导入)
 // import ElementPlus from 'element-plus'
 // import 'element-plus/dist/index.css'
 // 导入灯箱
