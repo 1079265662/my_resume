@@ -16,9 +16,6 @@
     }
 
     #loading-mask {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       position: fixed;
       left: 0;
       top: 0;
@@ -32,10 +29,16 @@
       cursor: wait;
     }
 
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
     .txt {
       position: relative;
-      top: 3.2rem;
-      left: -1.55rem;
+      top: 3rem;
       font-family: sans-serif;
       color: var(--font-clr);
     }
