@@ -9,7 +9,7 @@ import { onMounted } from 'vue'
 export default {
   setup () {
     onMounted(() => {
-      // 页面加载后显示内容
+      // 页面加载
       setTimeout(() => {
         // 显示页面内容
         document.getElementById('app').style.opacity = 1

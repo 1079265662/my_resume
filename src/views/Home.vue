@@ -31,7 +31,7 @@
         </div>
         <div class="buttomDiv buttonFlex hvr-bounce-to-top hvr-buzz-out " @click="gotoCV">查看我的简历</div>
       </div>
-      <div id="reveal-heard" class="overall-header-right" />
+      <div class="overall-header-right" />
       <div id="reveal-heard" class="overall-header-buttom">
         <div class="buttomDiv buttonFlex hvr-bounce-to-bottom hvr-wobble-horizontal" @click="gotoIntroduction">继续浏览</div>
       </div>
