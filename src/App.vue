@@ -16,7 +16,6 @@
         document.getElementById('loading-mask').style.opacity = '0'
         document.getElementById('loading-mask').style.pointerEvents = 'none'
       }, 300)
-    })
  };
 </script>
 <style lang="scss">
