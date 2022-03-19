@@ -17,8 +17,7 @@
         document.getElementById('loading-mask').style.pointerEvents = 'none'
       }, 300)
     })
-    };
-export default {}
+ };
 </script>
 <style lang="scss">
 </style>
