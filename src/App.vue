@@ -5,10 +5,10 @@
 
 </template>
 <script>
-import { onMounted } from 'vue'
+import { onBeforeUnmount } from 'vue'
 export default {
   setup () {
-    onMounted(() => {
+    onBeforeUnmount(() => {
       // 页面加载
       setTimeout(() => {
         // 显示页面内容
