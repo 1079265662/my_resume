@@ -5,11 +5,8 @@
 
 </template>
 <script>
-import { onBeforeUnmount } from 'vue'
-export default {
-  setup () {
-    onBeforeUnmount(() => {
-      // 页面加载
+ window.onload = function(){
+             // 页面加载
       setTimeout(() => {
         // 显示页面内容
         document.getElementById('app').style.opacity = 1
@@ -20,8 +17,8 @@ export default {
         document.getElementById('loading-mask').style.pointerEvents = 'none'
       }, 300)
     })
-  }
-}
+    };
+export default {}
 </script>
 <style lang="scss">
 </style>
