@@ -11,6 +11,7 @@ function overLoading () {
   setTimeout(() => {
     // 显示页面内容
     document.getElementById('app').style.opacity = 1
+    document.getElementById('app').style.overflow = 'visible'
     // 隐藏加载页面
     // document.getElementById('loading-mask').style.transform = 'translateY(-100vh)'
     // document.getElementById('loading-mask').style.height = '0px'
