@@ -48,7 +48,14 @@
           <div v-if="$t.my_colleges !== '' && $t.my_colleges" class="my_Exercise_text">毕业院校: <span class="my_Exercise_number">{{ $t.my_colleges }}</span> </div>
         </div>
         <div class="my_image">
-          <el-image lazy :src="$t.my_photo" fit="fill" />
+          <el-image style="width: 100%;" lazy :src="$t.my_photo" fit="fill">
+            <template #placeholder>
+              <div class="image-slot">加载中...</div>
+            </template>
+            <template #error>
+              <div class="image-slot">加载失败</div>
+            </template>
+          </el-image>
         </div>
       </div>
       <!-- 关于我 -->
@@ -119,7 +126,14 @@
           <div v-for="(item,index) in $t.my_experience" :key="index" class="job_card">
             <div class="card_background" :style="{background: 'url('+ item.cardBackground +')'}" />
             <div class="job_content my_Exercise">
-              <el-image lazy class="job_content_image" :src="item.image" fit="cover" />
+              <el-image lazy class="job_content_image" :src="item.image" fit="cover">
+                <template #placeholder>
+                  <div class="image-slot">加载中...</div>
+                </template>
+                <template #error>
+                  <div class="image-slot">加载失败</div>
+                </template>
+              </el-image>
               <div class="my_Exercise_text_job">公司:&nbsp;<span class="my_Exercise_number_job">{{ item.titles }}</span></div>
               <div class="my_Exercise_text_job">职位:&nbsp;<span class="my_Exercise_number_job">{{ item.post }}</span></div>
               <div class="my_Exercise_text_job">时间:&nbsp;<span class="my_Exercise_number_job">{{ item.time }}</span></div>
@@ -144,7 +158,14 @@
       <div class="my_project_content">
         <div id="reveal-project" class="my_project_content_flex">
           <div v-for="(item,index) in $t.my_project" :key="index" class="my_project_box">
-            <el-image lazy class="my_project_box_img" :src="item.cardBackground" fit="cover" />
+            <el-image lazy class="my_project_box_img" :src="item.cardBackground" fit="cover">
+              <template #placeholder>
+                <div class="image-slot">加载中...</div>
+              </template>
+              <template #error>
+                <div class="image-slot">加载失败</div>
+              </template>
+            </el-image>
             <div class="my_project_box_text">
               <div>
                 <div class="my_project_title">
