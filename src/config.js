@@ -170,7 +170,7 @@ module.exports = {
       // 公司名称
       titles: '天津黑潮有限公司',
       // 公司logo
-      image: 'https://www.lshmnc.com.cn/res/LXHome/structure/3.jpg',
+      image: '',
       // 在职岗位
       post: 'Web前端开发(全职)',
       // 时间
