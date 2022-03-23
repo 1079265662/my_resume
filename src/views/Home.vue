@@ -308,6 +308,7 @@ export default {
 }
 :deep(.el-dialog) {
   width: 80%;
+  border-radius: 20px;
 }
 @keyframes sprite5 {
   0% {
@@ -954,7 +955,7 @@ export default {
         width: 400px;
       }
       .g-polygon-3 {
-        width: 500px;
+        width: 455px;
       }
     }
     .my_project_content {
