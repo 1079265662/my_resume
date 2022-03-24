@@ -25,19 +25,21 @@
 //   overLoading()
 // }
 // 结构加载完毕后 取消隐藏页
-import { onMounted } from 'vue'
+import { onMounted, nextTick } from 'vue'
 // 结构加载完毕后 取消隐藏页
 onMounted(() => {
-  setTimeout(() => {
-    // 显示页面内容
-    document.getElementById('app').style.opacity = 1
-    document.getElementById('app').style.overflow = 'visible'
-    // 隐藏加载页面
-    // document.getElementById('loading-mask').style.transform = 'translateY(-100vh)'
-    // document.getElementById('loading-mask').style.height = '0px'
-    document.getElementById('loading-mask').style.opacity = '0'
-    document.getElementById('loading-mask').style.pointerEvents = 'none'
-  }, 300)
+  nextTick(() => {
+    setTimeout(() => {
+      // 显示页面内容
+      document.getElementById('app').style.opacity = 1
+      document.getElementById('app').style.overflow = 'visible'
+      // 隐藏加载页面
+      // document.getElementById('loading-mask').style.transform = 'translateY(-100vh)'
+      // document.getElementById('loading-mask').style.height = '0px'
+      document.getElementById('loading-mask').style.opacity = '0'
+      document.getElementById('loading-mask').style.pointerEvents = 'none'
+    }, 300)
+  })
 })
 </script>
 <style lang="scss">
