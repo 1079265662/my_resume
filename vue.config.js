@@ -8,6 +8,7 @@ const res = require('./src/config')
 // 设置名称
 const name = res.my_title || '个人简历' // page title
 // webpack.config.js
+// 配置element 按需打包
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
