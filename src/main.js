@@ -40,8 +40,7 @@ const components = {
     app.component('SvgIcon', SvgIcon)
   }
 }
-// 挂载全局方法
+// 挂载全局实例
 app.use(store).use(components).use(Proper).use(router).use(vuetyped).use(countTo).use(VueEasyLightbox) // .use(ElementPlus)
-
-// 挂载实例
+// 挂载vue实例
 app.mount('#app')
