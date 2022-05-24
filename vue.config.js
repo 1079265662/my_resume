@@ -13,12 +13,14 @@ const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/my_resume/' : '/',
   chainWebpack: config => {
     // 设置默认的标题名称 配合 路由beforeEach 默认不设置的话是项目名字
     config.plugin('html').tap(args => {
       args[0].title = name
       return args
     })
+
     // Vue3导入Svg
     const svgRule = config.module.rule('svg')
     // 清除已有的所有 loader。
