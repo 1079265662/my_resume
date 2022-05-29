@@ -196,7 +196,7 @@ export default {
   setup () {
     // 注册实例Vue2 this
     const { proxy } = getCurrentInstance()
-    // 操作Dom
+    // 操作Dom 使用数字计时
     const webPercentage = ref(null)
     const javaPercentage = ref(null)
     const linuxPercentage = ref(null)
@@ -213,14 +213,14 @@ export default {
     })
     // 状态位
     const state = reactive({
-      // 顶部显示的状态位
-      header: 0,
-      // 显示内容的状态位
-      introduce: 0,
-      // 显示技能和经历
-      experience: 0,
-      // 显示项目经历
-      project: 0,
+      // // 顶部显示的状态位
+      // header: 0,
+      // // 显示内容的状态位
+      // introduce: 0,
+      // // 显示技能和经历
+      // experience: 0,
+      // // 显示项目经历
+      // project: 0,
       // 详情页弹窗
       showDialog: false
     })
@@ -326,7 +326,7 @@ export default {
   }
 }
 .overall-header {
-  opacity: v-bind('state.header');
+  // opacity: v-bind('state.header');
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 100px;
@@ -417,7 +417,7 @@ export default {
   }
 }
 .introduction {
-  opacity: v-bind('state.introduce');
+  // opacity: v-bind('state.introduce');
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 1fr 1fr 100px;
@@ -487,7 +487,7 @@ export default {
   }
 }
 .experience {
-  opacity: v-bind('state.experience');
+  // opacity: v-bind('state.experience');
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -678,7 +678,7 @@ export default {
   }
 }
 .my_project {
-  opacity: v-bind('state.project');
+  // opacity: v-bind('state.project');
   position: relative;
   display: grid;
   grid-template-areas: 'a' 'b' 'c';
