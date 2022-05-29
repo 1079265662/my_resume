@@ -20,6 +20,8 @@ module.exports = {
   my_sign: '热爱前端 , 喜欢新技术 , 想成为全栈工程师',
   // 页面打字机内容
   my_typewriter: ['面试官你好', '我叫刘凯利', '来自天津', '面试的岗位是Web前端开发', '主要面向Vue和小程序的开发'],
+  // 首页右侧拖
+  rightImage: 'https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/bg.jpg',
   // 个人跳转内容
   my_Link: [
     {

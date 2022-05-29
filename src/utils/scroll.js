@@ -33,7 +33,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 延迟时间
     delay: 150,
     // 动画开始的位置，'bottom', 'left', 'top', 'right'
-    origin: 'top',
+    // origin: 'top',
     // 回滚的时候是否再次触发动画
     reset: false,
     // 延时执行方式（always（一直延时执行），once（只延时执行一次），onload（只在加载时延时执行））
@@ -41,12 +41,12 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 在移动端是否使用动画
     mobile: true,
     // 滚动的距离，单位可以用%，rem等
-    distance: '-30px',
+    // distance: '-30px',
     // 其他可用的动画效果
     // 执行速度 线性函数啥的
     easing: 'cubic-bezier(0.5, 0, 0, 1)',
     // 执行方式（缩放）
-    scale: 0.8,
+    // scale: 0.8,
     beforeReveal: function (ele) {
       // 显示个人介绍
       state.introduce = 1
@@ -59,7 +59,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 延迟时间
     delay: 150,
     // 动画开始的位置，'bottom', 'left', 'top', 'right'
-    origin: 'right',
+    // origin: 'right',
     // 回滚的时候是否再次触发动画
     reset: false,
     // 延时执行方式（always（一直延时执行），once（只延时执行一次），onload（只在加载时延时执行））
@@ -67,12 +67,12 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 在移动端是否使用动画
     mobile: true,
     // 滚动的距离，单位可以用%，rem等
-    distance: '-30px',
+    // distance: '-30px',
     // 其他可用的动画效果
     // 执行速度 线性函数啥的
     easing: 'cubic-bezier(0.5, 0, 0, 1)',
     // 执行方式（缩放）
-    scale: 0.8,
+    // scale: 0.8,
     beforeReveal: function (ele) {
       // 显示技能和经历
       state.experience = 1
@@ -96,7 +96,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 延迟时间
     delay: 150,
     // 动画开始的位置，'bottom', 'left', 'top', 'right'
-    origin: 'top',
+    // origin: 'top',
     // 回滚的时候是否再次触发动画
     reset: false,
     // 延时执行方式（always（一直延时执行），once（只延时执行一次），onload（只在加载时延时执行））
@@ -104,12 +104,12 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // 在移动端是否使用动画
     mobile: true,
     // 滚动的距离，单位可以用%，rem等
-    distance: '-30px',
+    // distance: '-30px',
     // 其他可用的动画效果
     // 执行速度 线性函数啥的
     easing: 'cubic-bezier(0.5, 0, 0, 1)',
     // 执行方式（缩放）
-    scale: 0.8,
+    // scale: 0.8,
     beforeReveal: function (ele) {
       // 显示个人介绍
       state.project = 1

@@ -31,7 +31,7 @@
         </div>
         <div class="buttomDiv buttonFlex hvr-bounce-to-top hvr-buzz-out " @click="gotoCV">查看我的简历</div>
       </div>
-      <div class="overall-header-right" />
+      <div v-lazy:background-image="$t.rightImage" class="overall-header-right" />
       <div id="reveal-heard" class="overall-header-buttom">
         <div class="buttomDiv buttonFlex hvr-bounce-to-bottom hvr-wobble-horizontal" @click="gotoIntroduction">继续浏览</div>
       </div>
@@ -48,14 +48,7 @@
           <div v-if="$t.my_colleges !== '' && $t.my_colleges" class="my_Exercise_text">毕业院校: <span class="my_Exercise_number">{{ $t.my_colleges }}</span> </div>
         </div>
         <div class="my_image">
-          <el-image style="width: 100%;" lazy :src="$t.my_photo" fit="fill">
-            <template #placeholder>
-              <div class="image-slot">加载中...</div>
-            </template>
-            <template #error>
-              <div class="image-slot">加载失败</div>
-            </template>
-          </el-image>
+          <img v-lazy="$t.my_photo" style="width: 100%;">
         </div>
       </div>
       <!-- 关于我 -->
@@ -124,9 +117,9 @@
         </div>
         <div class="job_card_container">
           <div v-for="(item,index) in $t.my_experience" :key="index" class="job_card">
-            <div class="card_background" :style="{background: 'url('+ item.cardBackground +')'}" />
+            <div v-lazy:background-image="item.cardBackground" class="card_background" />
             <div class="job_content my_Exercise">
-              <el-image v-if="item.image" lazy class="job_content_image" :src="item.image" fit="cover" />
+              <img v-if="item.image" v-lazy="item.image" class="job_content_image">
               <div class="my_Exercise_text_job">公司:&nbsp;<span class="my_Exercise_number_job">{{ item.titles }}</span></div>
               <div class="my_Exercise_text_job">职位:&nbsp;<span class="my_Exercise_number_job">{{ item.post }}</span></div>
               <div class="my_Exercise_text_job">时间:&nbsp;<span class="my_Exercise_number_job">{{ item.time }}</span></div>
@@ -151,14 +144,7 @@
       <div class="my_project_content">
         <div id="reveal-project" class="my_project_content_flex">
           <div v-for="(item,index) in $t.my_project" :key="index" class="my_project_box">
-            <el-image lazy class="my_project_box_img" :src="item.cardBackground" fit="cover">
-              <template #placeholder>
-                <div class="image-slot">加载中...</div>
-              </template>
-              <template #error>
-                <div class="image-slot">加载失败</div>
-              </template>
-            </el-image>
+            <img v-lazy="item.cardBackground" lazy class="my_project_box_img">
             <div class="my_project_box_text">
               <div>
                 <div class="my_project_title">
@@ -190,7 +176,7 @@
   </div>
 </template>
 
-<script>
+<script >
 const res = require('@/config.js')
 import { onMounted, reactive, toRefs, ref, getCurrentInstance } from 'vue'
 // 导入scrollReveal
@@ -416,8 +402,7 @@ export default {
   }
   .overall-header-right {
     grid-area: b;
-    background: url('https://jinyanlong-1305883696.cos.ap-hongkong.myqcloud.com/bg.jpg')
-      no-repeat;
+    background: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     // filter: blur(1px);
@@ -466,6 +451,9 @@ export default {
       border: 20px solid white;
       box-shadow: $borderColor;
       transition: $transition;
+      img {
+        object-fit: cover;
+      }
       &:hover {
         transform: rotate(3deg) scale(1.05);
         box-shadow: $borderHover;
@@ -647,6 +635,7 @@ export default {
           background-size: cover !important;
           background-position: center !important;
           border-radius: $borderRadius;
+          background: $backgroundColor;
           position: absolute;
           top: 0;
           left: 0;
@@ -670,6 +659,7 @@ export default {
           max-height: 100px;
           border-radius: $borderRadius;
           margin-bottom: 20px;
+          object-fit: cover;
         }
         &:hover .card_background {
           transform: scale(1.05) translateZ(0);
@@ -776,10 +766,11 @@ export default {
       box-shadow: $borderColor;
       transition: $transition;
       .my_project_box_img {
+        object-fit: cover;
         position: absolute;
         width: 100%;
         height: 100%;
-        border-radius: $borderRadius;
+        // border-radius: $borderRadius;
         transition: $transition;
       }
       .my_project_box_text {
