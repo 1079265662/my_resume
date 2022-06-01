@@ -289,7 +289,7 @@ export default {
   background: $backgroundColor;
 }
 :deep(.el-dialog__title) {
-  font-family: $textSign;
+  // font-family: $textSign;
   font-size: $titleMedium;
 }
 :deep(.el-dialog) {
@@ -352,7 +352,7 @@ export default {
       justify-self: center;
       align-self: center;
       font-size: $contextSize;
-      font-family: $textSign;
+      // font-family: $textSign;
       line-height: 1.3;
     }
     .text-content {
@@ -397,7 +397,7 @@ export default {
     }
     .typing {
       font-weight: 700;
-      font-family: $textTypes;
+      // font-family: $textTypes;
     }
   }
   .overall-header-right {
@@ -511,6 +511,7 @@ export default {
 
     padding-top: $containerTop;
     .about_me_title {
+      // font-family: $textTypes;
       grid-area: a;
     }
     .my_tree_card {
@@ -570,18 +571,18 @@ export default {
           z-index: 2;
           .percentage {
             margin-top: 10px;
-            font-family: $textSign;
+            // font-family: $textSign;
             font-size: 24px;
           }
           .suject {
             margin-top: 10px;
             font-size: 24px;
-            font-family: $textTypes;
+            // font-family: $textTypes;
           }
           .frame {
             margin-top: 10px;
             font-size: 18px;
-            font-family: $textTypes;
+            // font-family: $textTypes;
           }
         }
       }
@@ -595,7 +596,7 @@ export default {
         .skill_Progress_content_text {
           text-align: center;
           width: 110px;
-          font-family: $textSign;
+          // font-family: $textSign;
         }
         .Progress {
           width: 100%;
@@ -787,17 +788,17 @@ export default {
         padding: 20px;
         .my_project_title {
           font-size: 24px;
-          font-family: $textSign;
+          // font-family: $textSign;
           margin-bottom: $bottom;
         }
         .my_project_Universal {
           color: $accentColor;
-          font-family: $textSign;
+          // font-family: $textSign;
           margin-bottom: 3px;
         }
         .my_project_Introduction {
           font-size: $contextSize;
-          font-family: $textTypes;
+          // font-family: $textTypes;
           margin-bottom: $bottom;
           display: -webkit-box;
           -webkit-line-clamp: 3;
@@ -806,7 +807,7 @@ export default {
         }
         .my_project_Technology {
           font-size: $buttonSize;
-          font-family: $textTypes;
+          // font-family: $textTypes;
           margin-bottom: $bottom;
           display: -webkit-box;
           -webkit-line-clamp: 2;

@@ -105,7 +105,6 @@ export default {
 .dialog__title {
   box-sizing: border-box;
   font-size: $titleMedium;
-  font-family: $textTypes;
   border-left: 4px solid #00a2ff;
   line-height: 48px;
   background: $bodyColor;

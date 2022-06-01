@@ -331,7 +331,7 @@ export default {
   }
 
   .message__title {
-    font-family: $textSign;
+    // font-family: $textSign;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -342,7 +342,6 @@ export default {
   }
 
   .message__text {
-    font-family: $textTypes;
     line-height: 42px;
     font-size: $titleMedium;
     padding: 0 60px;
@@ -420,7 +419,6 @@ export default {
   }
 
   .e-nav__link:after {
-    font-family: $textTypes;
     font-size: $buttonSize;
     content: '再看一遍!';
   }

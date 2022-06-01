@@ -3,7 +3,6 @@
   .about_me {
     grid-area: a;
     text-align: center;
-    font-family: $textTypes;
     font-size: $titleSize;
     transition: $transition;
     .about_me_title {
@@ -88,7 +87,6 @@
     cursor: pointer;
     border: 1px solid black;
     font-size: $buttonSize;
-    font-family: $textTypes;
   }
 }
 @mixin medias {
