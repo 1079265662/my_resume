@@ -31,7 +31,7 @@
         </div>
         <div class="buttomDiv buttonFlex hvr-bounce-to-top hvr-buzz-out " @click="gotoCV">查看我的简历</div>
       </div>
-      <div v-lazy:background-image="$t.rightImage" class="overall-header-right" />
+      <div v-lazy:background-image="$t.rightImage" class="overall-header-right lazyBackground" />
       <div id="reveal-heard" class="overall-header-buttom">
         <div class="buttomDiv buttonFlex hvr-bounce-to-bottom hvr-wobble-horizontal" @click="gotoIntroduction">继续浏览</div>
       </div>
@@ -117,7 +117,7 @@
         </div>
         <div class="job_card_container">
           <div v-for="(item,index) in $t.my_experience" :key="index" class="job_card">
-            <div v-lazy:background-image="item.cardBackground" class="card_background" />
+            <div v-lazy:background-image="item.cardBackground" class="card_background lazyBackground" />
             <div class="job_content my_Exercise">
               <img v-if="item.image" v-lazy="item.image" class="job_content_image">
               <div class="my_Exercise_text_job">公司:&nbsp;<span class="my_Exercise_number_job">{{ item.titles }}</span></div>
@@ -213,15 +213,6 @@ export default {
     })
     // 状态位
     const state = reactive({
-      // // 顶部显示的状态位
-      // header: 0,
-      // // 显示内容的状态位
-      // introduce: 0,
-      // // 显示技能和经历
-      // experience: 0,
-      // // 显示项目经历
-      // project: 0,
-      // 详情页弹窗
       showDialog: false
     })
     // 下载简历
@@ -326,7 +317,6 @@ export default {
   }
 }
 .overall-header {
-  // opacity: v-bind('state.header');
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 100px;
@@ -402,7 +392,7 @@ export default {
   }
   .overall-header-right {
     grid-area: b;
-    background: no-repeat;
+    background-color: $backgroundColor;
     background-size: cover;
     background-attachment: fixed;
     // filter: blur(1px);
@@ -417,7 +407,6 @@ export default {
   }
 }
 .introduction {
-  // opacity: v-bind('state.introduce');
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 1fr 1fr 100px;
@@ -487,7 +476,6 @@ export default {
   }
 }
 .experience {
-  // opacity: v-bind('state.experience');
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -679,7 +667,6 @@ export default {
   }
 }
 .my_project {
-  // opacity: v-bind('state.project');
   position: relative;
   display: grid;
   grid-template-areas: 'a' 'b' 'c';
