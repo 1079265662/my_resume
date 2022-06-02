@@ -392,7 +392,7 @@ export default {
   }
   .overall-header-right {
     grid-area: b;
-    background-color: $backgroundColor;
+    // background-color: $backgroundColor;
     background-size: cover;
     background-attachment: fixed;
     // filter: blur(1px);

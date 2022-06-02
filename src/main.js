@@ -15,7 +15,7 @@ import vuetyped from 'vue3typed'
 // 导入灯箱
 import VueEasyLightbox from 'vue-easy-lightbox'
 // 导入懒加载
-import VueLazyloadNext from 'vue-lazyload-next'
+import VueLazyload from 'vue-lazyload'
 // 导入SvgIcon组件
 import SvgIcon from '@/components/SvgIcon/index.vue' // 这是组件路径
 const req = require.context('@/assets/svg', false, /\.svg$/) // 这是svg文件路径
@@ -46,7 +46,7 @@ const components = {
 app.use(store).use(components).use(Proper).use(router).use(vuetyped).use(countTo).use(VueEasyLightbox) // .use(ElementPlus)
 // 懒加载配置
 app.use(
-  VueLazyloadNext,
+  VueLazyload,
   {
     // error: '',
     preLoad: 1.3,

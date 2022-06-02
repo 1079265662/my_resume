@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="showDialog" destroy-on-close :title="content.project_title" center>
+  <el-dialog v-model="showDialog" destroy-on-close :title="content.project_title" center @close="closed">
     <div class="dialog">
       <div class="dialog__title">
         项目类型
@@ -86,13 +86,18 @@ export default {
       // 灯箱索引值
       data.index = e
     }
+    // 关闭弹窗同时关闭灯箱
+    const closed = () => {
+      // 显示灯箱
+      data.visible = false
+    }
     // 关闭灯箱
     const handleHide = () => {
       data.visible = false
     }
     // 结构导出
     const dataOut = toRefs(data)
-    return { handleClose, ...dataOut, handleHide, openLightbox }
+    return { handleClose, ...dataOut, handleHide, openLightbox, closed }
   }
 }
 </script>
