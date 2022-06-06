@@ -111,7 +111,7 @@
         </div>
       </div>
       <!-- 经历 -->
-      <div id="reveal-experience" class="my_job_content">
+      <div id="reveal-introduce" class="my_job_content">
         <div class="my_job_title">
           <div class="about_me"><span class="about_me_title">工作经历</span></div>
         </div>
@@ -127,7 +127,7 @@
           </div>
         </div>
       </div>
-      <div class="experience_buttom">
+      <div id="reveal-introduce" class="experience_buttom">
         <div class="buttomDiv buttonFlex hvr-wobble-to-bottom-right hvr-bounce-to-left" @click="gotoProject">继续浏览</div>
       </div>
     </div>
@@ -213,6 +213,7 @@ export default {
     })
     // 状态位
     const state = reactive({
+      // 弹出层
       showDialog: false
     })
     // 下载简历
@@ -624,7 +625,7 @@ export default {
           background-size: cover !important;
           background-position: center !important;
           border-radius: $borderRadius;
-          background: $backgroundColor;
+          background: rgba(255, 255, 255, 0.2);
           position: absolute;
           top: 0;
           left: 0;
