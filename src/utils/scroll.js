@@ -18,7 +18,7 @@ export default function retScroll (data, state, webPercentage, javaPercentage, l
     // distance: '20px',
     // 其他可用的动画效果
     // 执行速度 线性函数啥的
-    easing: 'cubic-bezier(0.5, 0, 0, 1)',
+    // easing: 'cubic-bezier(0.5, 0, 0, 1)',
     // 执行方式（缩放）
     scale: 0.6
     // beforeReveal: function (ele) {

@@ -200,6 +200,7 @@ export default {
     const webPercentage = ref(null)
     const javaPercentage = ref(null)
     const linuxPercentage = ref(null)
+
     // 赋值
     const data = reactive({
       // 声明 scrollReveal组件
@@ -258,7 +259,7 @@ export default {
     }
     // 页面加载生命周期
     onMounted(() => {
-      // 启动scrollReveal的方法
+      // // 启动scrollReveal的方法
       retScroll(data, state, webPercentage, javaPercentage, linuxPercentage)
       console.log(res)
     })
@@ -750,7 +751,7 @@ export default {
       height: 400px;
       overflow: hidden;
       position: relative;
-      border-radius: $borderRadius;
+      // border-radius: $borderRadius;
       background: transparent;
       box-shadow: $borderColor;
       transition: $transition;
