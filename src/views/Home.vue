@@ -31,7 +31,7 @@
         </div>
         <div class="buttomDiv buttonFlex hvr-bounce-to-top hvr-buzz-out " @click="gotoCV">查看我的简历</div>
       </div>
-      <div v-lazy:background-image="$t.rightImage" class="overall-header-right lazyBackground" />
+      <div v-lazy:background-image="$t.rightImage" class="overall-header-right lazyBackground " />
       <div id="reveal-heard" class="overall-header-buttom">
         <div class="buttomDiv buttonFlex hvr-bounce-to-bottom hvr-wobble-horizontal" @click="gotoIntroduction">继续浏览</div>
       </div>
@@ -394,13 +394,23 @@ export default {
   }
   .overall-header-right {
     grid-area: b;
-    // background-color: $backgroundColor;
-    background-size: cover;
-    background-attachment: fixed;
+    background: #363636 repeat 0 0;
+    box-shadow: 10px 0 30px black;
     // filter: blur(1px);
-    animation: vignette-anim 3s infinite;
+    /* 动画名称 */
+    animation-name: animate, vignette-anim;
+    /* 持续时间 */
+    animation-duration: 18s, 3s;
+    /* 动画过度类型 */
+    animation-timing-function: linear;
+    /* 动画是否反向运动 normal顺时针  reverse逆时针 alternate-reverse（正反循环 */
+    animation-direction: normal;
+    /* 动画循环次数  infinite无限 */
+    animation-iteration-count: infinite;
+    // animation: 18s linear 0s normal infinite animate;
     border-radius: 20px 0px 0px 20px;
   }
+
   .overall-header-buttom {
     grid-area: c;
     justify-self: center;
@@ -1074,6 +1084,15 @@ export default {
   }
   50% {
     box-shadow: 0px 0 0px black;
+  }
+}
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 -1450px;
   }
 }
 </style>
