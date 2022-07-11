@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="showDialog" destroy-on-close :title="content.project_title" center @close="closed">
+  <el-dialog v-model="showDialog" draggable destroy-on-close :title="content.project_title" center @close="closed">
     <div class="dialog">
       <div class="dialog__title">
         项目类型

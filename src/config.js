@@ -104,7 +104,7 @@ module.exports = {
       // 技能名称
       title: 'Vue2',
       // 技能百分比
-      percentage: 75,
+      percentage: 60,
       // 颜色
       color: '#41b883',
       // 介绍
@@ -114,19 +114,10 @@ module.exports = {
       // 技能名称
       title: 'Vue3',
       // 技能百分比
-      percentage: 65,
+      percentage: 50,
       // 颜色
       color: '#41b883',
       introduce: '还在学习中'
-    },
-    {
-      // 技能名称
-      title: '小程序',
-      // 技能百分比
-      percentage: 60,
-      // 颜色
-      color: '#07c160',
-      introduce: '小程序很方便'
     },
     {
       title: 'JavaScript',
@@ -135,14 +126,35 @@ module.exports = {
       introduce: '够用就行!'
     },
     {
-      title: 'jQuery',
+      // 技能名称
+      title: '小程序',
+      // 技能百分比
+      percentage: 40,
+      // 颜色
+      color: '#07c160',
+      introduce: '小程序很方便'
+    },
+    {
+      // 技能名称
+      title: 'three.js',
+      // 技能百分比
       percentage: 30,
-      color: '#78cff5',
-      introduce: '技术太老,我不喜欢'
+      // 颜色
+      color: '#049EF4',
+      introduce: 'webgl领域充满了未知'
+    },
+    {
+      // 技能名称
+      title: 'TypeScript',
+      // 技能百分比
+      percentage: 15,
+      // 颜色
+      color: '#344c7f',
+      introduce: '当下热门JS的超集 还在学习中'
     },
     {
       title: '表结构',
-      percentage: 10,
+      percentage: 5,
       color: '#00758f',
       introduce: '做权限的时候略有了解'
     },

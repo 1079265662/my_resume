@@ -159,7 +159,7 @@
                   {{ item.project_software }}
                 </div>
                 <div class="experience_buttom">
-                  <div class="buttomDiv buttonFlex hvr-bounce-to-right" @click="checkProject(item)">查看详情</div>
+                  <div class="buttomDiv buttonFlex hvr-back-pulse" @click="checkProject(item)">查看详情</div>
                 </div>
               </div>
             </div>
