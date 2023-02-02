@@ -7,12 +7,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
 
+  <!-- 导入加载css -->
   <link rel="stylesheet" href="./loading.css" referrerpolicy="origin" />
 
+  <!-- 导入jq -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!-- 导入gsap动画库 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
     integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -63,6 +66,7 @@
     gsap.to("#loading-mask", {
       opacity: 0, ease: "elastic", delay: 0.5, ease: 'power2.out', onComplete: () => {
         $("#loading-mask").css("pointer-events", "none").css("z-index", "-1");
+        // $("#loading-mask").css("display", "none")
       }
     })
   )
